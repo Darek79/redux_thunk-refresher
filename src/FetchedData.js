@@ -9,16 +9,20 @@ export const FetchedStuff = ({
   fetch_files
 }) => {
   useEffect(() => {
-    fetch_files(
-      fetched_data,
-      fetched_error,
-      "https://jsonplaceholder.typicode.com/posts/1/comments"
-    );
+    if (data.length === 0) {
+      fetch_files(
+        fetched_data,
+        fetched_error,
+        "https://jsonplaceholder.typicode.com/posts/1/comments"
+      );
+    }
   }, []);
   return (
     <section>
       {console.log(data, "data")}
-      <ul>{status ? data.map((el) => <li>{el.name}</li>) : "not"}</ul>
+      <ul>
+        {status ? data.map((el, i) => <li key={i}>{el.name}</li>) : "not"}
+      </ul>
     </section>
   );
 };

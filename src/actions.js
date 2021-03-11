@@ -13,7 +13,6 @@ export const reset = () => ({
 });
 
 export const fetched_data = (data = []) => {
-  console.log(data, "FET%CHED");
   return {
     type: "FETCH_OK",
     payload: data
