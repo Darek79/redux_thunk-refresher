@@ -9,7 +9,7 @@ export const FetchedStuff = ({
   fetch_files
 }) => {
   useEffect(() => {
-    if (data.length === 0) {
+    if (true) {
       fetch_files(
         fetched_data,
         fetched_error,
